@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { Navbar, List } from "../organisms";
+import getItems from "../hooks/getItems";
 
 const Main = () => {
+  const [getDiscussions, items, isLoadingItems] = getItems();
+
+  useEffect(() => {
+    getDiscussions("/get");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log(items);
+
   return (
     <div>
       <Navbar />
-      <List />
+      {isLoadingItems ? <p>Loading...</p> : <List listData={items} />}
     </div>
   );
 };
