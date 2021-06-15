@@ -13,8 +13,20 @@ const Item = ({ isComplete, description, dueDate }) => {
     return;
   };
 
+  const todoState = () => {
+    // completed todos
+    if (isComplete) {
+      return "lightgreen";
+      //overdue todos
+    } else if (moment(dueDate) < moment()) {
+      return "red";
+    }
+    //uncomplete with no due date
+    return "lightgray";
+  };
+
   return (
-    <div className="item_container">
+    <div className="item_container" style={{ backgroundColor: todoState() }}>
       <div className="item_info">
         <CheckBox checked={isComplete} />
         <p className="item_infoTitle">{description}</p>
