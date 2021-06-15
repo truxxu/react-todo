@@ -1,4 +1,6 @@
 import React from "react";
+
+import "./list.css";
 import { Item } from "../molecules";
 
 const List = () => {
@@ -69,8 +71,8 @@ const List = () => {
   };
 
   return (
-    <div>
-      <div>{renderList()}</div>
+    <div className="list_container">
+      <div className="list_containerInner">{renderList()}</div>;
     </div>
   );
 };
