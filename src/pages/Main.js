@@ -1,13 +1,13 @@
-import React from 'react';
-import {Navbar, List} from '../organisms'
+import React from "react";
+import { Navbar, List } from "../organisms";
 
 const Main = () => {
-    return (
-        <div>
-            <Navbar />
-            <List />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Navbar />
+      <List />
+    </div>
+  );
+};
 
-export {Main}
+export { Main };

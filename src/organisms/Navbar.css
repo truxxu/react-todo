@@ -1,0 +1,12 @@
+.navbar_container {
+  background-color: darkblue;
+  color: white;
+  height: 4em;
+  display: flex;
+  align-items: center;
+}
+
+.navbar_title {
+  font-weight: bold;
+  margin-left: 0.5em;
+}

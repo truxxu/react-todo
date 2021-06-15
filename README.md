@@ -4,5 +4,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In order to run this project, execute the following commands:
 
-* npm install
-* npm start
+- npm install
+- npm start
