@@ -5,5 +5,6 @@ export default axios.create({
   headers: {
     "X-Api-Key":
       "PMAK-5ef63db179d23c004de50751-10300736bc550d2a891dc4355aab8d7a5c",
+    "Content-Type": "application/json",
   },
 });

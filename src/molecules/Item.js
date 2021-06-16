@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 import "./Item.css";
 import { CheckBox } from "../atoms";
 
-const Item = ({ isComplete, description, dueDate }) => {
+const Item = ({ isComplete, description, dueDate, id }) => {
+  const [isChecked, setIsChecked] = useState(isComplete);
+
   const parseDate = (date) => {
     if (date) {
       return <p className="item_date">{moment(date).format("MM/DD/YYYY")}</p>;
@@ -15,7 +17,7 @@ const Item = ({ isComplete, description, dueDate }) => {
 
   const todoState = () => {
     // completed todos
-    if (isComplete) {
+    if (isChecked) {
       return "lightgreen";
       //overdue todos
     } else if (moment(dueDate) < moment()) {
@@ -28,7 +30,7 @@ const Item = ({ isComplete, description, dueDate }) => {
   return (
     <div className="item_container" style={{ backgroundColor: todoState() }}>
       <div className="item_info">
-        <CheckBox checked={isComplete} />
+        <CheckBox setIsChecked={setIsChecked} checked={isChecked} id={id} />
         <p className="item_infoTitle">{description}</p>
       </div>
       {parseDate(dueDate)}
